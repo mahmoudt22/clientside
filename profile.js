@@ -90,3 +90,8 @@ for (let i = 0; i < accordions.length; i++) {
     }
   });
 }
+let logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  localStorage.clear();
+  location.replace("login.html")
+})
