@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  --maincolor: #9f78ff;
+  --black: rgb(36, 36, 36);
+}
+
+.hide {
+  opacity: 0;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(233, 240, 221);
+}
+.profile {
+  color: var(--maincolor) !important;
+}
+/* Start The First Section */
+section.first-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #9f78ff;
+  padding: 15px 25px;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100px;
+  border-radius: 50%;
+}
+.headName {
+  font-weight: 700;
+  font-size: 35px;
+}
+.headUsername,
+.id {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* End The First Section */
+
+/* Start accordion Sections */
+.accordion {
+  width: 100%;
+  background-color:  rgb(233, 240, 221);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+  text-align: left;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.active,
+.accordion:hover {
+  background-color:  rgb(97, 100, 92);
+}
+.panel {
+  display: none;
+  height: 0;
+  transition: 0.5s ease-in-out;
+}
+.panel ul {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(233, 240, 221);
+  padding: 30px 60px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.panel ul li {
+  width: 40%;
+}
+/* End accordion Sections */
