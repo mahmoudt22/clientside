@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+:root {
+  --maincolor: #9f78ff;
+  --dark: #24252a;
+  --bodyColor: darkslategrey;
+}
+/* body {
+  background: var(--bodyColor);
+} */
+li,
+a,
+button {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+h2 {
+  color: #ecf0f1;
+}
+h2 span {
+  color: var(--maincolor);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: var(--dark);
+}
+.logo,
+.nav-links {
+  list-style: none;
+}
+.logo {
+  cursor: pointer;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav-links li a {
+  transition: all 0.3s ease-in-out;
+}
+.nav-links li a:hover {
+  color: var(--maincolor);
+}
+.logout {
+  background-color: var(--maincolor);
+  padding: 9px 25px;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.logout:hover {
+  opacity: 0.8;
+}
