@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 :root {
-  --maincolor: #9f78ff;
+  --maincolor: #383346;
   --black: rgb(36, 36, 36);
 }
 
@@ -15,9 +15,9 @@
 body {
   background-color: rgb(233, 240, 221);
 }
-.profile {
-  color: var(--maincolor) !important;
-}
+/* .profile {
+  color:#383346 ;
+} */
 /* Start The First Section */
 section.first-section {
   display: flex;
@@ -59,7 +59,7 @@ img {
 }
 .active,
 .accordion:hover {
-  background-color:  rgb(97, 100, 92);
+  background-color:  rgb(183, 185, 178);
 }
 .panel {
   display: none;
@@ -67,6 +67,7 @@ img {
   transition: 0.5s ease-in-out;
 }
 .panel ul {
+  color: rgb(14, 13, 13) !important;
   display: flex;
   justify-content: space-between;
   background: rgb(233, 240, 221);
@@ -75,6 +76,7 @@ img {
   gap: 10px;
 }
 .panel ul li {
+  color: #383346 ;
   width: 40%;
 }
 /* End accordion Sections */
