@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
 :root {
-    --primary-color: #00b5d5;
-    --secondary-color: #0077b5;
+    /* --primary-color: #00b5d5; */
+    /* --secondary-color: #0077b5; */
     --gray-color: #808080;
 }
 
@@ -126,4 +126,8 @@ body {
 
 .box .options a:hover {
     background-color: var(--secondary-color);
+}
+
+.hide{
+    display: none;
 }

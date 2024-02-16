@@ -1,3 +1,15 @@
+let searchI=document.getElementById("search")
+searchI.addEventListener("input", e=>{
+    let value =e.target.value
+    let products=document.querySelectorAll(".products")
+    products.forEach(prod=>{
+        const isvisible=prod.id.toLowerCase().includes(value)
+        prod.classList.toggle("hide",!isvisible)
+    })
+})
+
+
+
 fetch('https://dummyjson.com/products')
 .then(res => res.json())
 .then(data=>{
@@ -17,8 +29,9 @@ fetch('https://dummyjson.com/products')
  const detailcontainer =document.getElementById('moredetails');
     data.forEach(product => {
         const cardDiv =document.createElement('div');
-        console.log(product);
-
+        // console.log(product);
+        cardDiv.id=`${product.title}`
+        cardDiv.className="products"
         cardDiv.innerHTML = `
         <div class="box">
         <img src="${product.images[0]}" alt="${product.title}" />
@@ -88,12 +101,13 @@ function catagory(e){
 .then(res => res.json())
 .then(res=>{
     let prod= res.products
-    console.log(prod);
+    // console.log(prod);
 
     prod.forEach(product => {
         const cardDiv =document.createElement('div');
         console.log(product);
-
+        cardDiv.id=`${product.title}`
+        cardDiv.className="products"
         cardDiv.innerHTML = `
         <div class="box">
         <img src="${product.images[0]}" alt="${product.title}" />
