@@ -27,11 +27,12 @@ let coin = document.getElementById("coin");
 let wallet = document.getElementById("wallet");
 let network = document.getElementById("network");
 console.log(window.localStorage.token);
+let token = JSON.parse(window.localStorage.token);
 /* providing token in bearer */
 fetch("https://dummyjson.com/auth/me", {
   method: "GET",
   headers: {
-    Authorization: window.localStorage.token,
+    Authorization: token,
   },
 })
   .then((res) => res.json())
@@ -93,5 +94,5 @@ for (let i = 0; i < accordions.length; i++) {
 let logout = document.getElementById("logout");
 logout.addEventListener("click", function () {
   localStorage.clear();
-  location.replace("login.html")
-})
+  location.replace("login.html");
+});
