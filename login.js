@@ -56,7 +56,7 @@ function uservalidate() {
 }
 
 function passvalidate() {
-  var passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+  var passReg = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{6,}$/;
   if (passReg.test(pass.value)) {
     console.log("pass is right");
     passval = true;

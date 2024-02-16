@@ -136,3 +136,9 @@ function catagory(e){
     }
 
 }
+
+let logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  localStorage.clear();
+  location.replace("login.html")
+})
