@@ -18,6 +18,10 @@ body {
     background-color: #ececec;
 }
 
+.home{
+    color: #9f78ff;
+}
+
 .heading {
     background-color: var(--primary-color);
     padding: 75px 0;
@@ -90,6 +94,7 @@ body {
 
 .box h2 {
     font-size: 20px;
+    color: black;
 }
 
 .box p {

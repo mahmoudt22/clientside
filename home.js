@@ -37,16 +37,12 @@ fetch('https://dummyjson.com/products')
         <img src="${product.images[0]}" alt="${product.title}" />
         <h2>${product.title}</h2>
         <p>${product.description}</p>
-        <span>${product.price}$</span>
+        <span>$${product.price}</span>
         <div class="rate">
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+            <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="#">Buy It Now</a>
+            <a href="#">More Details</a>
             <a href="#">Add to Cart</a>
         </div>
          </div>

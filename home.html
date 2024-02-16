@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="nav.css">
     <title>Products</title>
+
+<!-- Style Sheet -->
+
     <style>
+        /* ============= GLOBAL VALUES ================*/
         @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
 :root {
@@ -26,6 +31,11 @@
 body {
     background-color: #ececec;
 }
+
+/* ============= GLOBAL VALUES ================*/
+
+
+/* =============  Heading and Boxies for product ===========*/
 
 .heading {
     background-color: var(--primary-color);
@@ -138,50 +148,63 @@ body {
     background-color: var(--secondary-color);
 }
 
+/* =============  Heading and Boxies for product ===========*/
 
 
 
-
-
-
-
-
-/*   categooooory   */
+/*======================  CATEGORY STYLE =====================*/
 #wrap{
     margin-top: 41px;
+    margin-right: auto;
+    margin-left: auto;
     width: fit-content;
-    float: left;
+    display: block;
     
 }
 
-#wrap h2{
-    background: var(--primary-color);
-    width: 137px;
-    padding: 5px;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    /* border-right: 2px solid white;
-    border-left: 2px solid white;
-    border-top: 2px solid white; */
-}
-
-#list{
+/* #list{
     background: rgba(128, 128, 128, 0.271);
     width: fit-content;
     opacity: 0;
     text-align: center;
+} */
+#list ul{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
 }
 #list ul li{
     margin-bottom: 5px;
     padding: 10px;
     cursor:pointer;
+    font-size: 20px;
 }
-#wrap:hover{
+#list ul .category:hover{
+    border-bottom: 2px solid white;
+}
+
+@media (max-width:678px){
+    #list ul{
+        display: block;
+    }
+    #list ul li{
+        font-size: larger;
+        text-align: center;
+    }
+    #list ul .category:hover{
+        border-bottom: none;
+        border-right: 2px solid white;
+        border-left: 2px solid white;
+    }
+    .heading h1{
+        font-size: 50px;
+    }
+}
+/* #wrap:hover{
   #list{
     opacity: 1;
   }
-}
+} */
 
 #list ul li:not(:last-child){
     border-bottom: 2px solid var(--primary-color);
@@ -190,10 +213,10 @@ body {
 .adddetail{
     width: 500px;
 }
+/*========================  CATEGORY STYLE =====================*/
 
-/*           */
 
-
+/*  ==========   search  container style  ============   */
 .newsletter{
     background-color: #dadada;
     height: 300px;
@@ -201,9 +224,10 @@ body {
 .newsletter .contnaier{
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
+
 .newsletter .text h4{
     color: var(--primary-color);
     font-size: 40px;
@@ -253,31 +277,59 @@ body {
     }
 }
 
+.newsletter .contnaier .subscribe-form button{
+    display: none;
+}
 
-@media (max-width: 580px) {
+@media (max-width:1120px){
+    .newsletter .contnaier .subscribe-form #search{
+        width: 75%;
+        
+    }
+  
+}
+
+@media (max-width:678px) {
    .newsletter .contnaier .btn-srch {
         width: 50px;
         display: block;
     }
- 
+    .newsletter .contnaier .text{
+        display: none;
+    }
+    .newsletter .contnaier .subscribe-form{
+        padding: 50px;
+    }
+
+    .newsletter .contnaier .subscribe-form #search{
+        width: 100%;
+
+    }
 }
-
-/*           */
-
-
-
-
-/* category */
+/*     search  container      */
     </style>
+<!-- Style Sheet -->
+
+
 
 </head>
 <body>
+    <!-- Nav Bar Section  -->
+    <nav>
+        <h2 class="logo">Mini<span>Store</span></h2>
+        <ul class="nav-links">
+          <li><a href="home.html" class="home">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+        <button class="logout" id="logout">Logout</button>
+      </nav>
+      <!-- Nav Bar Section  -->
 
+    <!-- Heading Container -->
     <div class="heading">
-        <h1>Our Products</h1>
-<div id="wrap">
-        <h2>category</h2>
-    
+        <h1>categories</h1>
+    <div id="wrap">
         <div id="list">
         <ul>
             <li class="category" id="smartphones">Smart Phones</li>
@@ -291,7 +343,9 @@ body {
     </div>
     </div>
     </div>
-    
+    <!-- Heading Container -->
+
+    <!--search container -->
     <div class="newsletter">
         <div class="contnaier">
             <div class="text">
@@ -307,11 +361,15 @@ body {
             </div>
         </div>
     </div>
+    <!--search container -->
 
-
+    <!-- Container For Fetched Data -->
     <div class="container" id="product-container">
        
     </div>
+    <!-- Container For Fetched Data -->
+
+    <!--  JAVA SCRIPT SRC  -->
     <script src="home.js"></script>
 </body>
 </html>
