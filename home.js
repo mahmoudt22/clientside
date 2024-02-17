@@ -16,6 +16,7 @@ let counter = new Array(30)
 counter.fill(0)
 all.initialize(cart, counter)
 
+// =================  display all product =======================//
 fetch('https://dummyjson.com/products')
     .then(res => res.json())
     .then(data => {
@@ -53,13 +54,13 @@ fetch('https://dummyjson.com/products')
         <img src="${product.images[0]}" alt="${product.title}" />
         <h2>${product.title}</h2>
         <p>${product.description}</p>
-        <span>$${product.price}</span>
+        <span id="price">Price:  $${product.price}</span>
         <div class="rate">
             <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="#">More Details</a>
-            <a href="#" id="add${id}">${addOrRemove}</a>
+            <a href="">More Details</a>
+            <a href="" id="add${id}">${addOrRemove}</a>
         </div>
          </div>
         `;
@@ -85,39 +86,13 @@ fetch('https://dummyjson.com/products')
                 }
             }
             )
-            // cardDiv.addEventListener('click' , function(){
-            //     const carddetail =document.createElement('div');
-
-            //     carddetail.innerHTML=`
-            //     <div class="box">
-            //     <img src="${e.target.images[0]}" alt="${e.target.title}" />
-            //     <h2>${e.target.title}</h2>
-            //     <p>${e.target.description}</p>
-            //     <span>${e.target.price}$</span>
-            //     <div class="rate">
-            //         <i class="filled fas fa-star"></i>
-            //         <i class="filled fas fa-star"></i>
-            //         <i class="filled fas fa-star"></i>
-            //         <i class="filled fas fa-star"></i>
-            //         <i class="fa-regular fa-star"></i>
-            //     </div>
-            //     <div class="options">
-            //         <a href="#">Buy It Now</a>
-            //         <a href="#">Add to Cart</a>
-            //     </div>
-            //      </div>
-            //     `;
-
-            //     detailcontainer.appendChild(carddetail);
-
         })
 
     });
 
 
+ //========================= category logic ========================= //
 const productcontainer = document.getElementById('product-container');
-
-
 document.addEventListener("click", catagory)
 
 function catagory(e) {
@@ -150,22 +125,18 @@ function catagory(e) {
         <img src="${product.images[0]}" alt="${product.title}" />
         <h2>${product.title}</h2>
         <p>${product.description}</p>
-        <span>${product.price}$</span>
+        <span id="price">Price:  $${product.price}$</span>
         <div class="rate">
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="filled fas fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+            <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="#">Buy It Now</a>
-            <a href="#" id="add${+product.id - 1}">${addOrRemove}</a>
+            <a href="#">More Details</a>
+            <a href="" id="add${+product.id - 1}">${addOrRemove}</a>
         </div>
          </div>
         `;
-
-                    productcontainer.appendChild(cardDiv);
+                    // ==================== cart logic =========================//
+                     productcontainer.appendChild(cardDiv);
                     let addToCart = document.getElementById(`add${+product.id - 1}`)
                     addToCart.addEventListener("click", function () {
                         if (this.innerText == "Add to Cart") {
@@ -194,6 +165,8 @@ function catagory(e) {
     }
 
 }
+
+/*============== log out buttom =============*/
 
 let logout = document.getElementById("logout");
 logout.addEventListener("click", function () {

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
 :root {
-    /* --primary-color: #00b5d5; */
-    /* --secondary-color: #0077b5; */
+    --primary-color: #9f78ff;  /*#00b5d5*/ 
+    --secondary-color: #0077b5;
     --gray-color: #808080;
 }
 
@@ -130,9 +130,160 @@ body {
 }
 
 .box .options a:hover {
-    background-color: var(--secondary-color);
+    background-color: white;
+    border: 1px solid #9f78ff;
+    color: black;
 }
 
 .hide{
     display: none;
 }
+
+#price{
+    color: #777;
+}
+
+
+
+/*======================  CATEGORY STYLE =====================*/
+#wrap{
+    margin-top: 41px;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    display: block;
+    
+}
+#list ul{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+}
+#list ul li{
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor:pointer;
+    font-size: 20px;
+}
+#list ul .category:hover{
+    border-bottom: 2px solid white;
+}
+
+@media (max-width:678px){
+    #list ul{
+        display: block;
+    }
+    #list ul li{
+        font-size: larger;
+        text-align: center;
+    }
+    #list ul .category:hover{
+        border-bottom: none;
+        border-right: 2px solid white;
+        border-left: 2px solid white;
+    }
+    .heading h1{
+        font-size: 50px;
+    }
+}
+
+#list ul li:not(:last-child){
+    border-bottom: 2px solid var(--primary-color);
+}
+.adddetail{
+    width: 500px;
+}
+/*========================  CATEGORY STYLE =====================*/
+
+
+/*  ===================   search  container style  =====================   */
+.newsletter{
+    background-color: #dadada;
+    height: 300px;
+}
+.newsletter .contnaier{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newsletter .text h4{
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.newsletter .text p{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #111;
+}
+.newsletter .subscribe-form{
+    width: 600px;
+    position: relative;
+   border-radius: 30px;
+    overflow: hidden;
+}
+.newsletter .subscribe-form input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 18px 20% 18px 30px;
+    border-radius: 30px;
+    border: 2px solid #6060607c;
+}
+.newsletter .subscribe-form .btn-srch{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 150px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .newsletter .text h4{
+        font-size: 30px;
+    }
+    .text p{
+        font-size: 15px;
+    }
+}
+
+.newsletter .contnaier .subscribe-form button{
+    display: none;
+}
+
+@media (max-width:1120px){
+    .newsletter .contnaier .subscribe-form #search{
+        width: 75%;
+        
+    }
+  
+}
+
+@media (max-width:678px) {
+   .newsletter .contnaier .btn-srch {
+        width: 50px;
+        display: block;
+    }
+    .newsletter .contnaier .text{
+        display: none;
+    }
+    .newsletter .contnaier .subscribe-form{
+        padding: 50px;
+    }
+
+    .newsletter .contnaier .subscribe-form #search{
+        width: 100%;
+
+    }
+}
+/*     search  container      */
