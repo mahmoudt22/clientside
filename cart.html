@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Cart</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="cart.css">
-  <link rel="stylesheet" href="nav.css">
-
-
-
-  <title>Cart</title>
-
-</head>
-
-<body>
-  <nav>
-    <h2 class="logo">Mini<span>Store</span></h2>
-    <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="profile.html" class="profile">Profile</a></li>
-      <li><a href="cart.html">Cart</a></li>
-    </ul>
-    <button class="logout" id="logout">Logout</button>
-  </nav>
-  <!-- <div class="heading">
+  <body>
+    <nav>
+      <h2 class="logo">Mini<span>Store</span></h2>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="cart.html" style="color: #9f78ff">Cart</a></li>
+      </ul>
+      <button class="logout" id="logout">Logout</button>
+    </nav>
+    <!-- <div class="heading">
 
     <h1>Cart</h1>
 
   </div> -->
-  
-  <div id="cart-container" hidden>
-  </div>
-  <div class="price">
-    <div class="cart-price"> <h2>Total Price : <span id="totalprice">0</span><span id="totalprice">$</span></h2></div>
-      <div class="cart-icon"><button> buy&#128717;</button></div>
-</div>
-  <script src="cart.js" type="module"></script>
-  <script src="module.js" type="module"></script>
 
-</body>
-
+    <div id="cart-container" hidden></div>
+    <div class="price">
+      <div class="cart-price">
+        <h2>
+          Total Price : <span id="totalprice">0</span
+          ><span id="totalprice">$</span>
+        </h2>
+      </div>
+      <div class="cart-icon"><button>buy&#128717;</button></div>
+    </div>
+    <script src="cart.js" type="module"></script>
+    <script src="module.js" type="module"></script>
+  </body>
 </html>
