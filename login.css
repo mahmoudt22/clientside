@@ -157,3 +157,20 @@ form span{
   display: none;
   font-size: 12px;
 }
+
+@media(max-width:828px){
+  main{
+    flex-direction: column;
+  }
+  main .left-side{
+    width: 100%;
+    border-radius:10px 10px 0 0 ;
+    flex-basis: 300px;
+  }
+}
+
+@media(max-width:450px){
+form .input-field{
+  width: 80%;
+}  
+}
