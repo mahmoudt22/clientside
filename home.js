@@ -70,8 +70,8 @@ fetch('https://dummyjson.com/products')
             <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-        <a href="" class="prods"  id=${product.id} >More Details</a>
-            <a href="" id="add${id}">${addOrRemove}</a>
+        <button class="prods"  id=${product.id} >More Details</button>
+            <button  id="add${id}">${addOrRemove}</button>
         </div>
          </div>
         `;
@@ -141,8 +141,8 @@ function catagory(e) {
             <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="" class="prods"  id=${product.id} >More Details</a>
-            <a href="" id="add${+product.id - 1}">${addOrRemove}</a>
+            <button  class="prods"  id=${product.id} >More Details</button>
+            <button  id="add${+product.id - 1}">${addOrRemove}</button>
         </div>
          </div>
         `;

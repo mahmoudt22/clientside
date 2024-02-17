@@ -35,3 +35,13 @@ fetch(`https://dummyjson.com/products/${productID}`)
     image3.src = data.images[2];
     image4.src = data.images[3];
   });
+
+
+
+  ////////////////////////////////////////////////////////////////////
+
+  let logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  localStorage.clear();
+  location.replace("login.html");
+});

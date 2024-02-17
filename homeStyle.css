@@ -118,7 +118,7 @@ body {
     margin-bottom: 25px;
 }
 
-.box .options a {
+.box .options button {
     color: white;
     background-color: var(--primary-color);
     display: inline-block;
@@ -127,9 +127,11 @@ body {
     font-weight: 600;
     font-size: 12px;
     border-radius: 50px;
+    border: none;
+    outline: none;
 }
 
-.box .options a:hover {
+.box .options button:hover {
     background-color: white;
     border: 1px solid #9f78ff;
     color: black;
