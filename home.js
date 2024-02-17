@@ -81,7 +81,9 @@ fetch('https://dummyjson.com/products')
             addToCart.addEventListener("click", function () {
                 if (this.innerText == "Add to Cart") {
                     cart.push(this.id)
-                    
+                    counter[this.id.slice(3)] = 1
+                    localStorage.setItem('itemsCounter', JSON.stringify(counter))
+
                     localStorage.setItem('itemsId', JSON.stringify(cart))
                     this.innerText = "Remove From Cart"
                 }
@@ -93,6 +95,8 @@ fetch('https://dummyjson.com/products')
                     cart = [...afterDel]
                     localStorage.setItem('itemsId', JSON.stringify(cart))
                     this.innerText = "Add to Cart"
+                    counter[+thisId.slice(3)] = 0
+                    localStorage.setItem('itemsCounter', JSON.stringify(counter))
 
                 }
             }
@@ -165,7 +169,8 @@ function catagory(e) {
                             localStorage.setItem('itemsId', JSON.stringify(cart))
                             this.innerText = "Add to Cart"
                            
-
+                            counter[+thisId.slice(3)] = 0
+                            localStorage.setItem('itemsCounter', JSON.stringify(counter))
                         }
                     }
                     )

@@ -38,10 +38,35 @@ export function addNewPro(id, product, counter, cart) {
             i++
         }
         localStorage.setItem('itemsId', JSON.stringify(cart))
+        let totalprice = document.getElementById("totalprice")
+        totalprice.innerText = +totalprice.innerText - (+counter[+thisClass.slice(3)]) * (+product.price)
+        counter[+thisClass.slice(3)] = 0
+        localStorage.setItem('itemsCounter', JSON.stringify(counter))
 
     })
     newPro.appendChild(rmButton)
     allPro.appendChild(newPro)
+
+    let totalprice = document.getElementById("totalprice")
+    totalprice.innerText = +totalprice.innerText + counter[id] * product.price
+    let addcounter = document.getElementsByClassName(`Ptr${id}`)[0].children[2].children[0]
+    addcounter.addEventListener("click", function () {
+        let span = document.getElementsByClassName(`Ptr${id}`)[0].children[2].children[1]
+        span.innerText = +span.innerText + 1
+        counter[+id] = +span.innerText
+        totalprice.innerText = +totalprice.innerText + product.price
+        localStorage.setItem('itemsCounter', JSON.stringify(counter))
+    })
+    let minuscounter = document.getElementsByClassName(`Ptr${id}`)[0].children[2].children[2]
+    minuscounter.addEventListener("click", function () {
+        let span = document.getElementsByClassName(`Ptr${id}`)[0].children[2].children[1]
+        if (span.innerText != 1) {
+            span.innerText = +span.innerText - 1
+            counter[+id] = +span.innerText
+            totalprice.innerText = +totalprice.innerText - product.price
+            localStorage.setItem('itemsCounter', JSON.stringify(counter))
+        }
+    })
    
 }
 
