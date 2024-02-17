@@ -19,7 +19,7 @@ remainginImages.forEach((image) => {
 ////////////////////////////////////////////////////////////////
 
 // let productID = window.localStorage.id;
-let productID = 16;
+let productID = JSON.parse( localStorage.getItem("id"));
 fetch(`https://dummyjson.com/products/${productID}`)
   .then((res) => res.json())
   .then((data) => {

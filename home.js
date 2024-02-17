@@ -10,6 +10,17 @@ searchI.addEventListener("input", e => {
         prod.classList.toggle("hide", !isvisible)
     })
 })
+
+
+document.addEventListener("click",function(e){
+    if(e.target.className=="prods"){
+        e.preventDefault();
+    localStorage.setItem("id",JSON.stringify(e.target.id))
+    location.assign("signleProduct.html")
+    
+    }
+    })
+
 //? initialize cart and counter from local storage 
 let cart = []
 let counter = new Array(30)
@@ -59,7 +70,7 @@ fetch('https://dummyjson.com/products')
             <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="">More Details</a>
+        <a href="" class="prods"  id=${product.id} >More Details</a>
             <a href="" id="add${id}">${addOrRemove}</a>
         </div>
          </div>
@@ -130,7 +141,7 @@ function catagory(e) {
             <i class="filled fas fa-star">${product.rating}</i>
         </div>
         <div class="options">
-            <a href="#">More Details</a>
+            <a href="" class="prods"  id=${product.id} >More Details</a>
             <a href="" id="add${+product.id - 1}">${addOrRemove}</a>
         </div>
          </div>

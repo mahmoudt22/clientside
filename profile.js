@@ -1,3 +1,9 @@
+let token = JSON.parse(localStorage.getItem("token"));
+
+if(!token){
+  location.replace("login.html")
+};
+
 let id = document.getElementById("id");
 let firstName = document.getElementById("firstName");
 let maidenName = document.getElementById("maidenName");
@@ -27,7 +33,7 @@ let coin = document.getElementById("coin");
 let wallet = document.getElementById("wallet");
 let network = document.getElementById("network");
 console.log(window.localStorage.token);
-let token = JSON.parse(window.localStorage.token);
+// let token = JSON.parse(window.localStorage.token);
 /* providing token in bearer */
 fetch("https://dummyjson.com/auth/me", {
   method: "GET",
