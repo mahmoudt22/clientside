@@ -136,7 +136,7 @@ function catagory(e) {
 
                 prod.forEach((product, id) => {
                     let addOrRemove
-                    if (cart.indexOf(`add${id}`) != -1) {
+                    if (cart.indexOf(`add${+product.id - 1}`) != -1) {
                         addOrRemove = "Remove From Cart"
                     } else {
                         addOrRemove = "Add to Cart"
@@ -160,13 +160,13 @@ function catagory(e) {
         </div>
         <div class="options">
             <a href="#">Buy It Now</a>
-            <a href="#">Add to Cart</a>
+            <a href="#" id="add${+product.id - 1}">${addOrRemove}</a>
         </div>
          </div>
         `;
 
                     productcontainer.appendChild(cardDiv);
-                    let addToCart = document.getElementById(`add${id}`)
+                    let addToCart = document.getElementById(`add${+product.id - 1}`)
                     addToCart.addEventListener("click", function () {
                         if (this.innerText == "Add to Cart") {
                             cart.push(this.id)
