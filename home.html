@@ -1,76 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="all.min.css">
-    <link rel="stylesheet" href="homeStyle.css">
-    <link rel="stylesheet" href="nav.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="homeStyle.css" />
+    <link rel="stylesheet" href="nav.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Products</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <!-- Nav Bar Section  -->
     <nav>
-        <h2 class="logo">Mini<span>Store</span></h2>
-        <ul class="nav-links">
-          <li><a href="home.html" class="home">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-        <button class="logout" id="logout">Logout</button>
-      </nav>
-      <!-- Nav Bar Section  -->
+      <h2 class="logo">Mini<span>Store</span></h2>
+      <ul class="nav-links">
+        <li><a href="home.html" class="home">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+      <button class="logout" id="logout">Logout</button>
+    </nav>
+    <!-- Nav Bar Section  -->
+
+    <!-- top section -->
+    <div class="top-section">
+      <div class="left">
+        <p>
+          Start shopping online with<br />
+          <span>Mini<span class="s">Store</span></span>
+        </p>
+      </div>
+      <div class="right">
+        <div class="top-section-image">
+          <img src="dazzle-online-shop-in-phone.gif" />
+        </div>
+      </div>
+    </div>
+    <!-- top section -->
 
     <!-- Heading Container -->
     <div class="heading">
-        <h1>categories</h1>
-    <div id="wrap">
+      <h1>categories</h1>
+      <div id="wrap">
         <div id="list">
-        <ul>
+          <ul>
             <li class="category" id="smartphones">Smart Phones</li>
             <li class="category" id="laptops">Laptops</li>
             <li class="category" id="fragrances">Fragrances</li>
             <li class="category" id="skincare">Skincare</li>
             <li class="category" id="groceries">Groceries</li>
             <li class="category" id="home-decoration">Home Decoration</li>
-    
-        </ul>
-    </div>
-    </div>
+          </ul>
+        </div>
+      </div>
     </div>
     <!-- Heading Container -->
 
     <!--search container -->
     <div class="newsletter">
-        <div class="contnaier">
-            <div class="text">
-                <h4>Search for any product</h4>
-                <p>we wish you a happy experience</p>
-            </div>
-
-            <div class="subscribe-form">
-                <form action="">
-                    <input type="search" id="search" placeholder="waiting for your help...">
-                    <button class="btn-srch">Get</button>
-                </form>
-            </div>
+      <div class="contnaier">
+        <div class="subscribe-form">
+          <form action="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="search"
+              placeholder="waiting for your help..."
+            />
+          </form>
         </div>
+        <p>We Wish you a happy experience 💜</p>
+      </div>
     </div>
     <!--search container -->
 
     <!-- Container For Fetched Data -->
-    <div class="container" id="product-container">
-       
-    </div>
+    <div class="container" id="product-container"></div>
     <!-- Container For Fetched Data -->
 
     <!--  JAVA SCRIPT SRC  -->
-    <script src="home.js" type="module"></script>
-    <script src="module.js" type="module"></script>
-</body>
+    <script src="home.js"></script>
+  </body>
 </html>
