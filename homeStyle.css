@@ -116,7 +116,7 @@ body {
   margin-bottom: 25px;
 }
 
-.box .options a {
+.box .options button {
   color: white;
   background-color: var(--primary-color);
   display: inline-block;
@@ -125,10 +125,14 @@ body {
   font-weight: 600;
   font-size: 12px;
   border-radius: 50px;
+  border: none;
+  outline: none;
 }
 
-.box .options a:hover {
-  background-color: var(--secondary-color);
+.box .options button:hover {
+  background-color: white;
+  border: 1px solid #9f78ff;
+  color: black;
 }
 
 /* =============  Heading and Boxies for product ===========*/
@@ -437,8 +441,6 @@ body {
 /* /////////////////////////////////// */
 
 .top-section {
-  /* background: url(pexels-anni-roenkae-3109808.jpg); */
-  /* background: url(/pexels-dids-2988383.jpg); */
   background: linear-gradient(
     180deg,
     rgba(36, 37, 42, 1) 0%,
