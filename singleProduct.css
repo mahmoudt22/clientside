@@ -108,9 +108,9 @@ main {
   border: none;
   outline: none;
 }
-.add-cart-button {
+#addToCart {
   background-color: var(--maincolor);
 }
-.add-cart-button:hover {
+#addToCart {
   background-color: #41306d;
 }
