@@ -178,6 +178,50 @@ function catagory(e) {
 
 
             });
+    }if(e.target.className == "category" && e.target.id == "product"){
+
+        productcontainer.innerHTML = " ";
+
+        fetch(`https://dummyjson.com/products`)
+            .then(res => res.json())
+            .then(res => {
+                let prod = res.products
+                // console.log(prod);
+
+                prod.forEach((product, id) => {
+                    let addOrRemove
+                    if (cart.indexOf(`add${+product.id - 1}`) != -1) {
+                        addOrRemove = "Remove From Cart"
+                    } else {
+                        addOrRemove = "Add to Cart"
+                    }
+                    const cardDiv = document.createElement('div');
+                    console.log(product);
+                    cardDiv.id = `${product.title}`
+                    cardDiv.className = "products"
+                    cardDiv.innerHTML = `
+        <div class="box">
+        <img src="${product.images[0]}" alt="${product.title}" />
+        <h2>${product.title}</h2>
+        <p>${product.description}</p>
+        <span id="price">Price:  $${product.price}$</span>
+        <div class="rate">
+            <i class="filled fas fa-star">${product.rating}</i>
+        </div>
+        <div class="options">
+            <button  class="prods"  id=${product.id} >More Details</button>
+            <button  id="add${+product.id - 1}">${addOrRemove}</button>
+        </div>
+         </div>
+        `;
+        
+                productcontainer.appendChild(cardDiv);  
+        
+        
+                })
+        
+        });
+        
     }
 
 }
@@ -189,3 +233,30 @@ logout.addEventListener("click", function () {
     localStorage.clear();
     location.replace("login.html")
 })
+
+
+/*========= menu toggler ===============*/
+let menuToggle = document.querySelector(".menu_toggler");
+let header = document.querySelector("header")
+function menuToggler(header , toggler) {
+    toggler.addEventListener("click" , ()=> {
+        toggler.classList.toggle("show");
+        header.classList.toggle("showMenu");
+    })
+}
+menuToggler(header,menuToggle);
+
+/*========= menu toggler ===============*/
+
+
+/* ============== to top ================*/ 
+const totop =document.querySelector(".to-top");
+
+window.addEventListener("scroll",function() {
+    if(window.scrollY > 100){
+        totop.classList.add("active")
+    }else{
+        totop.classList.remove("active")
+    }
+});
+/* ============== to top ================*/ 

@@ -16,12 +16,18 @@
     <!-- Nav Bar Section  -->
     <nav>
       <h2 class="logo">Mini<span>Store</span></h2>
+      <header>
       <ul class="nav-links">
         <li><a href="home.html" class="home">Home</a></li>
         <li><a href="profile.html">Profile</a></li>
         <li><a href="cart.html">Cart</a></li>
+        <li><button class="logout" id="logout">Logout</button></li>
       </ul>
-      <button class="logout" id="logout">Logout</button>
+    </header>
+      <div class="menu_toggler">
+        <i class="fa-solid fa-bars toggle_menu"></i>
+        <i class="fa-solid fa-xmark toggle_close"></i>
+    </div>
     </nav>
     <!-- Nav Bar Section  -->
 
@@ -53,6 +59,7 @@
             <li class="category" id="skincare">Skincare</li>
             <li class="category" id="groceries">Groceries</li>
             <li class="category" id="home-decoration">Home Decoration</li>
+            <li class="category" id="product">All</li>
           </ul>
         </div>
       </div>
@@ -81,8 +88,43 @@
     <div class="container" id="product-container"></div>
     <!-- Container For Fetched Data -->
 
+<!-- to top button -->
+    <a href="#" class="to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+<!-- to top button -->
+
+
+
+<!--foooter-->
+
+<footer>
+  <div class="container">
+      <div class="box-box">
+<h1>Branches</h1>
+<a href="#"><i class="fa-solid fa-location-dot"></i>PortSaid</a>
+<a href="#"><i class="fa-solid fa-location-dot"></i>Alexandria</a>
+</div>
+<div class="box-box">
+<h1>contact info</h1>
+<a href="#"><i class="fa-solid fa-phone-volume"></i>+334-487-1978</a>
+<a href="#"><i class="fa-regular fa-envelope"></i>mosedek@mail.com</a>
+<a href="#"><i class="fa-regular fa-envelope"></i>sedekelmasry@mail.com</a>
+</div>
+<div class="box-box">
+<h1>follow us</h1>
+<a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+<a href=""><i class="fa-brands fa-instagram"></i>instegram</a>
+</div>
+</div>
+</footer>
+<!--foooter-->
+
+
     <!--  JAVA SCRIPT SRC  -->
     <script src="home.js" type="module"></script>
     <script src="module.js" type="module"></script>
   </body>
 </html>
+
