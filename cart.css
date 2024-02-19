@@ -250,3 +250,42 @@ font-size:5em;
   transform: scale(1.04, 1.04);
   box-shadow: 0 5px 8px #9b9b9b;
 }
+
+@media(max-width:768px){
+  .product{
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 10px 0;
+    height: 100%;
+
+  }
+  .info{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+
+  }
+  .product-description{
+    width: 100%;
+  }
+ a i{
+
+    width: 70vw;
+    margin: 0 5px;
+    
+    background-color: black;
+    text-align: center;
+
+  }
+  .propic{
+    width: 60%;
+    height: 50%;
+
+  }
+  header.showMenu {
+
+    z-index: 1000;
+}
+
+}

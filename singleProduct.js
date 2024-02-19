@@ -89,3 +89,16 @@ logout.addEventListener("click", function () {
   localStorage.clear();
   location.replace("login.html");
 });
+
+/*========= menu toggler ===============*/
+let menuToggle = document.querySelector(".menu_toggler");
+let header = document.querySelector("header")
+function menuToggler(header , toggler) {
+    toggler.addEventListener("click" , ()=> {
+        toggler.classList.toggle("show");
+        header.classList.toggle("showMenu");
+    })
+}
+menuToggler(header,menuToggle);
+
+/*========= menu toggler ===============*/

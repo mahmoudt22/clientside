@@ -8,7 +8,7 @@ searchI.addEventListener("input", e => {
     let value = e.target.value
     let products = document.querySelectorAll(".products")
     products.forEach(prod => {
-        const isvisible = prod.id.toLowerCase().includes(value)
+        const isvisible = prod.id.toLowerCase().includes(value)||prod.id.includes(value)||prod.id.toUpperCase().includes(value)
         prod.classList.toggle("hide", !isvisible)
     })
 })
