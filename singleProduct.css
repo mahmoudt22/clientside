@@ -114,3 +114,20 @@ main {
 #addToCart {
   background-color: #41306d;
 }
+
+@media(max-width:768px){
+  .img img{
+    height: 230px;
+    width: 100%;
+  }
+  main{
+    display: flex;
+    flex-direction:column ;
+  }
+  .right-side{
+    text-align: center;
+  }
+  .right-side .product-rate{
+    justify-content: center;
+  }
+}
