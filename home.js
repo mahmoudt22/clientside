@@ -44,7 +44,7 @@ fetch('https://dummyjson.com/products')
 
         const productcontainer = document.getElementById('product-container');
 
-        const detailcontainer = document.getElementById('moredetails');
+        
         data.forEach((product, id) => {
             const cardDiv = document.createElement('div');
             // ? check if product in local storage or not 
@@ -216,7 +216,30 @@ function catagory(e) {
         `;
         
                 productcontainer.appendChild(cardDiv);  
-        
+                let addToCart = document.getElementById(`add${id}`)
+                addToCart.addEventListener("click", function () {
+                    if (this.innerText == "Add to Cart") {
+                        cart.push(this.id)
+                        counter[this.id.slice(3)] = 1
+                        localStorage.setItem('itemsCounter', JSON.stringify(counter))
+    
+                        localStorage.setItem('itemsId', JSON.stringify(cart))
+                        this.innerText = "Remove From Cart"
+                    }
+                    else if (this.innerText == "Remove From Cart") {
+                        let thisId = this.id
+                        let afterDel = cart.filter(function (product) {
+                            return product != thisId
+                        })
+                        cart = [...afterDel]
+                        localStorage.setItem('itemsId', JSON.stringify(cart))
+                        this.innerText = "Add to Cart"
+                        counter[+thisId.slice(3)] = 0
+                        localStorage.setItem('itemsCounter', JSON.stringify(counter))
+    
+                    }
+                }
+                )
         
                 })
         
