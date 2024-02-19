@@ -216,7 +216,6 @@ function catagory(e) {
             <button  id="add${+product.id - 1}">${addOrRemove}</button>
         </div>
          </div>
-<<<<<<< HEAD
         `;
         
                 productcontainer.appendChild(cardDiv);  
@@ -245,38 +244,6 @@ function catagory(e) {
                 }
                 )
         
-=======
-         `;
-         productcontainer.appendChild(cardDiv);
-                    let addToCart = document.getElementById(`add${+product.id - 1}`)
-                    addToCart.addEventListener("click", function () {
-                        if (this.innerText == "Add to Cart") {
-                            cart.push(this.id)
-
-                            counter[this.id.slice(3)] = 1
-                            localStorage.setItem('itemsCounter', JSON.stringify(counter))
-                            localStorage.setItem('itemsId', JSON.stringify(cart))
-
-                            this.innerText = "Remove From Cart"
-                        }
-                        else if (this.innerText == "Remove From Cart") {
-                            let thisId = this.id
-                            let afterDel = cart.filter(function (product) {
-                                return product != thisId
-                            })
-                            cart = [...afterDel]
-                            localStorage.setItem('itemsId', JSON.stringify(cart))
-                            this.innerText = "Add to Cart"
-
-                            counter[+thisId.slice(3)] = 0
-                            localStorage.setItem('itemsCounter', JSON.stringify(counter))
-                        }
-                    }
-                    )
-
-
-
->>>>>>> a8fa194f8dc6d86d3932b31da7c6940a509451d9
                 })
 
             });
