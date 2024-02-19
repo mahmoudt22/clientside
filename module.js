@@ -1,5 +1,5 @@
 export function initialize(cart, counter) {
-  if (localStorage.length) {
+  if (localStorage.length>2) {
     window.addEventListener("load", function () {
       let fetchedItem = JSON.parse(localStorage.getItem("itemsId"));
       let fetchedcounter = JSON.parse(localStorage.getItem("itemsCounter"));

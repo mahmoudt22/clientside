@@ -30,9 +30,13 @@ li {
   list-style: none;
 }
 img {
-  width: 100px;
+  width: 150px;
   border-radius: 50%;
+  background-color: white;
+  border: 2px solid whitesmoke;
+  padding: 2px;
 }
+
 .headName {
   font-weight: 700;
   font-size: 35px;
@@ -47,7 +51,7 @@ img {
 /* Start accordion Sections */
 .accordion {
   width: 100%;
-  background-color:  rgb(233, 240, 221);
+  background-color: rgb(233, 240, 221);
   outline: none;
   border: none;
   cursor: pointer;
@@ -59,7 +63,7 @@ img {
 }
 .active,
 .accordion:hover {
-  background-color:  rgb(183, 185, 178);
+  background-color: rgb(183, 185, 178);
 }
 .panel {
   display: none;
@@ -75,8 +79,36 @@ img {
   flex-wrap: wrap;
   gap: 10px;
 }
+.panel ul.personal li {
+  width: 30%;
+}
+
 .panel ul li {
-  color: #383346 ;
+  color: #383346;
   width: 40%;
 }
 /* End accordion Sections */
+@media screen and (max-width: 810px) {
+  .panel ul li {
+    width: 100%;
+  }
+  .panel ul.personal li {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .panel ul.personal li {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .first-section {
+    flex-direction: column-reverse;
+  }
+  .main-info li {
+    display: none;
+  }
+  .main-info li.headName {
+    display: block;
+  }
+}

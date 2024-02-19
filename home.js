@@ -1,6 +1,8 @@
 // ? import functions from module file 
 import * as all from "./module.js"
 
+localStorage.setItem("id", "")
+
 let searchI = document.getElementById("search")
 searchI.addEventListener("input", e => {
     let value = e.target.value
@@ -12,14 +14,14 @@ searchI.addEventListener("input", e => {
 })
 
 
-document.addEventListener("click",function(e){
-    if(e.target.className=="prods"){
+document.addEventListener("click", function (e) {
+    if (e.target.className == "prods") {
         e.preventDefault();
-    localStorage.setItem("id",JSON.stringify(e.target.id))
-    location.assign("signleProduct.html")
-    
+        localStorage.setItem("id", JSON.stringify(e.target.id))
+        location.assign("signleProduct.html")
+
     }
-    })
+})
 
 //? initialize cart and counter from local storage 
 let cart = []
@@ -106,7 +108,7 @@ fetch('https://dummyjson.com/products')
     });
 
 
- //========================= category logic ========================= //
+//========================= category logic ========================= //
 const productcontainer = document.getElementById('product-container');
 document.addEventListener("click", catagory)
 
@@ -151,12 +153,13 @@ function catagory(e) {
          </div>
         `;
                     // ==================== cart logic =========================//
-                     productcontainer.appendChild(cardDiv);
+                    productcontainer.appendChild(cardDiv);
                     let addToCart = document.getElementById(`add${+product.id - 1}`)
                     addToCart.addEventListener("click", function () {
                         if (this.innerText == "Add to Cart") {
                             cart.push(this.id)
-                            
+                            counter[this.id.slice(3)] = 1
+                            localStorage.setItem('itemsCounter', JSON.stringify(counter))
                             localStorage.setItem('itemsId', JSON.stringify(cart))
                             this.innerText = "Remove From Cart"
                         }
@@ -168,7 +171,7 @@ function catagory(e) {
                             cart = [...afterDel]
                             localStorage.setItem('itemsId', JSON.stringify(cart))
                             this.innerText = "Add to Cart"
-                           
+
                             counter[+thisId.slice(3)] = 0
                             localStorage.setItem('itemsCounter', JSON.stringify(counter))
                         }
@@ -178,7 +181,7 @@ function catagory(e) {
 
 
             });
-    }if(e.target.className == "category" && e.target.id == "product"){
+    } if (e.target.className == "category" && e.target.id == "product") {
 
         productcontainer.innerHTML = " ";
 
@@ -242,9 +245,9 @@ function catagory(e) {
                 )
         
                 })
-        
-        });
-        
+
+            });
+
     }
 
 }
@@ -261,24 +264,24 @@ logout.addEventListener("click", function () {
 /*========= menu toggler ===============*/
 let menuToggle = document.querySelector(".menu_toggler");
 let header = document.querySelector("header")
-function menuToggler(header , toggler) {
-    toggler.addEventListener("click" , ()=> {
+function menuToggler(header, toggler) {
+    toggler.addEventListener("click", () => {
         toggler.classList.toggle("show");
         header.classList.toggle("showMenu");
     })
 }
-menuToggler(header,menuToggle);
+menuToggler(header, menuToggle);
 
 /*========= menu toggler ===============*/
 
 
-/* ============== to top ================*/ 
-const totop =document.querySelector(".to-top");
+/* ============== to top ================*/
+const totop = document.querySelector(".to-top");
 
-window.addEventListener("scroll",function() {
-    if(window.scrollY > 100){
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 100) {
         totop.classList.add("active")
-    }else{
+    } else {
         totop.classList.remove("active")
     }
 });

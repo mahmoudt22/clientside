@@ -1,25 +1,23 @@
+
+import * as all from "./module.js"
+
+let cart = []
+let counter = new Array(30)
+counter.fill(0)
+all.initialize(cart, counter)
+
 const title = document.getElementById("title");
 const description = document.getElementById("description");
 const price = document.getElementById("price");
 const rating = document.getElementById("rating");
 const brand = document.getElementById("brand");
 const thumbnail = document.getElementById("thumbnail");
-const image1 = document.getElementById("image1");
-const image2 = document.getElementById("image2");
-const image3 = document.getElementById("image3");
-const image4 = document.getElementById("image4");
+
 ////////////////////////////////////////////////////////////////
-const remainginImages = document.querySelectorAll(".remaingin-images img");
-const mainImage = document.getElementById("thumbnail");
-remainginImages.forEach((image) => {
-  image.parentElement.addEventListener("click", function () {
-    mainImage.src = image.src;
-  });
-});
 ////////////////////////////////////////////////////////////////
 
 // let productID = window.localStorage.id;
-let productID = JSON.parse( localStorage.getItem("id"));
+let productID = JSON.parse(localStorage.getItem("id"));
 fetch(`https://dummyjson.com/products/${productID}`)
   .then((res) => res.json())
   .then((data) => {
@@ -30,66 +28,63 @@ fetch(`https://dummyjson.com/products/${productID}`)
     rating.innerText = data.rating;
     brand.innerText = data.brand;
     thumbnail.src = data.thumbnail;
-    image1.src = data.images[0];
-    image2.src = data.images[1];
-    image3.src = data.images[2];
-    image4.src = data.images[3];
+    let bigDiv = document.getElementsByClassName("remaingin-images")[0]
+    for (let i = 0; i < data.images.length; i++) {
+      console.log("here")
+      let newDiv = document.createElement('div')
+      let newImg = document.createElement('img')
+      newImg.src = data.images[i]
+      newDiv.appendChild(newImg)
+      // newDiv.children[0].src
+      newDiv.addEventListener("click", function () {
+        thumbnail.src = this.children[0].src
+      })
+      bigDiv.appendChild(newDiv)
+    }
+
+    // ! add to cart part!
+    let addToCart = document.getElementById('addToCart')
+    console.log(addToCart.innerText)
+    let addOrRemove
+    if (cart.indexOf(`add${productID - 1}`) != -1) {
+      addOrRemove = '<i class="fas fa-shopping-cart"></i> Remove From cart'
+    } else {
+      addOrRemove = '<i class="fas fa-shopping-cart"></i> Add to cart'
+    }
+    console.log(addToCart.innerHTML)
+    addToCart.innerHTML = addOrRemove
+    addToCart.addEventListener("click", function () {
+      if (this.innerHTML.trim() == '<i class="fas fa-shopping-cart"></i> Add to cart') {
+        cart.push(`add${productID - 1}`)
+        counter[productID - 1] = 1
+        localStorage.setItem('itemsCounter', JSON.stringify(counter))
+
+        localStorage.setItem('itemsId', JSON.stringify(cart))
+        addToCart.innerHTML = '<i class="fas fa-shopping-cart"></i> Remove From cart'
+        console.log(addToCart.innerText)
+
+      }
+      else if (this.innerHTML.trim() == '<i class="fas fa-shopping-cart"></i> Remove From cart') {
+        // let thisId = this.id
+        let afterDel = cart.filter(function (product) {
+          return product != `add${productID - 1}`
+        })
+        cart = [...afterDel]
+        localStorage.setItem('itemsId', JSON.stringify(cart))
+        addToCart.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to cart'
+        console.log(addToCart.innerText)
+
+        counter[productID - 1] = 0
+        localStorage.setItem('itemsCounter', JSON.stringify(counter))
+
+      }
+    }
+    )
   });
 
-  let cart = [];
-  let counter = new Array(30);
-  counter.fill(0);
-  function initialize(cart, counter) {
-    if (localStorage.length) {
-      window.addEventListener("load", function () {
-        let fetchedItem = JSON.parse(localStorage.getItem("itemsId"));
-        let fetchedcounter = JSON.parse(localStorage.getItem("itemsCounter"));
-        for (let i = 0; i < fetchedItem.length; i++) {
-          cart.push(fetchedItem[i]);
-        }
-        for (let i = 0; i < fetchedcounter.length; i++) {
-          counter[i] = fetchedcounter[i];
-        }
-      });
-    }
-  }
-  initialize(cart, counter);
-  
-  // document.getElementById("addToCart").addEventListener("click", function () {
-  //   cart.push(add${productID - 1});
-  //   console.log(cart);
-  //   console.log(counter);
-  //   counter[productID - 1] = 1;
-  //   localStorage.setItem("itemsCounter", JSON.stringify(counter));
-  //   localStorage.setItem("itemsId", JSON.stringify(cart));
-  // });
-  let mmm=document.getElementById("addToCart");
+////////////////////////////////////////////////////////////////////
 
-mmm.addEventListener("click", function () {
- if(mmm.innerText==="ADD TO CART"){
-  cart.push(`add${productID-1}`)
-  counter[productID-1] = 1
-  localStorage.setItem('itemsCounter', JSON.stringify(counter))
-  localStorage.setItem('itemsId', JSON.stringify(cart))
-  mmm.innerText = "REMOVE FROM CART"
-
-}
-  else if (mmm.innerText == "REMOVE FROM CART") {
-    let thisId =(`add${productID-1}`)
-    console.log(thisId)
-    let afterDel = cart.filter(function (product) {
-        return product != thisId
-    })
-    cart = [...afterDel]
-    localStorage.setItem('itemsId', JSON.stringify(cart))
-    this.innerText = "ADD TO CART"
-
-}
-})
-
-  ////////////////////////////////////////////////////////////////////
-
-  let logout = document.getElementById("logout");
+let logout = document.getElementById("logout");
 logout.addEventListener("click", function () {
   localStorage.clear();
   location.replace("login.html");
